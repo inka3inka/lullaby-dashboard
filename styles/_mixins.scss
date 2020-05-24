@@ -3,6 +3,13 @@
 //Media queries:
 
 //Tablet:
+
+@mixin media-horizontal {
+  @media (orientation: landscape) {
+    @content
+  }
+}
+
 @mixin media-tablet {
   @media screen and ($tablet) {
     @content

@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
     list.appendChild(newElement);
     newElement.classList.add("list-element");
     newElement.innerHTML = `${listInput.value}<input type="checkbox" class="checkbox">`;
-    listInput.value = ""
+    // listInput.value = ""
   }
 
   addTaskButton.addEventListener('click', addListElement)
