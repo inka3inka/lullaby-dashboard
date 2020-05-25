@@ -7,6 +7,17 @@ window.addEventListener("DOMContentLoaded", () => {
   const addTaskButton = document.querySelector('.button__add-task');
   const list = document.querySelector('.list-elements');
   const listInput = document.querySelector('.list-input');
+  const video = document.querySelector('.video');
+
+  function loadConfiguration(){
+    fetch("https://cors-anywhere.herokuapp.com/https://github.com/inka3inka/lullaby-dashboard/blob/master/configuration.json", {
+      method: 'GET'
+    })
+    .then(resp => console.log(resp))
+  }
+
+  loadConfiguration();
+
 
 //Set time
   setInterval(() => {
