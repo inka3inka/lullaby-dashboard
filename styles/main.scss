@@ -25,7 +25,7 @@ body {
     justify-content: space-between;
   }
 
-  div {
+  > div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,6 +93,19 @@ li {
   width: 100%;
 }
 
+
+.list-element__edit {
+  display: flex;
+  flex-direction: row;
+}
+
 .checkbox {
-  padding: 2vw
+  padding: 2vw;
+  width: 18px;
+  height: 18px;
+
+  @include media-horizontal {
+    width: 22px;
+    height: 22px;
+  }
 }
