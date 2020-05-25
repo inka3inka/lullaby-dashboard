@@ -8,15 +8,13 @@ window.addEventListener("DOMContentLoaded", () => {
   const list = document.querySelector('.list-elements');
   const listInput = document.querySelector('.list-input');
   const video = document.querySelector('.video');
+  const configuration = fetch("https://cors-anywhere.herokuapp.com/https://github.com/inka3inka/lullaby-dashboard/blob/master/configuration.json", {
+    method: 'GET'
+  })
+    .then(resp => resp.json());
 
-  function loadConfiguration(){
-    fetch("https://cors-anywhere.herokuapp.com/https://github.com/inka3inka/lullaby-dashboard/blob/master/configuration.json", {
-      method: 'GET'
-    })
-    .then(resp => console.log(resp))
-  }
+  console.log(configuration);
 
-  loadConfiguration();
 
 
 //Set time

@@ -4,7 +4,7 @@
     [
       {
         "label": "Aenean rhoncus",
-        "listId": 1,
+        "listId": "1",
         "backgroundListColor": "#eaa0a4",
         "fontListColor": "#5c5c5c",
         "toDos": [
@@ -32,7 +32,7 @@
       },
       {
         "label": "Morbi luctus velit sapien",
-        "listId": 2,
+        "listId": "2",
         "backgroundListColor": "#b4eeb4",
         "fontListColor": "#ffffff",
         "toDos": [
@@ -56,7 +56,7 @@
       },
       {
         "label": "Nam sit amet fringilla diam",
-        "listId": 3,
+        "listId": "3",
         "backgroundListColor": "#a2b2b6",
         "fontListColor": "#000000",
         "toDos": [
