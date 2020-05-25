@@ -1,3 +1,23 @@
-{
-  "listToDo": []
-}
+[
+  {
+    "listName": "Aenean rhoncus",
+    "listId": 1,
+    "backgroundListColor": "#eaa0a4",
+    "fontListColor": "#5c5c5c",
+    "toDos": ["Sed felis nulla", "Morbi vel quam", "Sed vitae efficitur odio", "ed sit amet pulvinar ex, et varius est", "Nunc a libero eget justo auctor lobortis eu nec nisl"]
+  },
+  {
+    "listName": "Morbi luctus velit sapien",
+    "listId": 2,
+    "backgroundListColor": "#b4eeb4",
+    "fontListColor": "#ffffff",
+    "toDos": ["Nulla non tincidunt augue", "Vel quam", "Efficitur odio", "Libero eget justo auctor lobortis eu nec"]
+  },
+  {
+    "listName": "Nam sit amet fringilla diam",
+    "listId": 3,
+    "backgroundListColor": "#a2b2b6",
+    "fontListColor": "#000000",
+    "toDos": ["Aenean porta fringilla sapien at eleifend", "Nunc efficitur elit luctus", "Ante ultricies pellentesque", "Nullam suscipit", "Tortor id ultrices mol", "Dui nulla bibendum orci", "A interdum velit nulla id dolor", "Donec vestibulum", "Sapien venenatis lectus", "Mattis tempor", "Aenean sodales vel purus", "Vitae laoreet", "Sed pellentesque quis nulla at accumsan", "Proin aliquet laoreet tellus eu maximus", "Duis consequat tincidunt fringilla"]
+  }
+]
