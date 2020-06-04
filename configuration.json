@@ -14,19 +14,19 @@
           },
           {
             "name": "Morbi vel quam",
-            "color": "red"
+            "color": "blue"
           },
           {
             "name": "Sed vitae efficitur odio",
-            "color": "red"
+            "color": "purple"
           },
           {
             "name": "Ed sit amet pulvinar ex, et varius est",
-            "color": "red"
+            "color": "white"
           },
           {
             "name": "Nunc a libero eget justo auctor lobortis eu nec nisl",
-            "color": "red"
+            "color": "black"
           }
         ]
       },

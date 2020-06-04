@@ -69,6 +69,11 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 80%;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 5px;
 
   @include media-horizontal {
     width: 50%;
@@ -81,11 +86,14 @@ body {
 li {
   font-size: 18px;
   margin: 2vw 0;
+  text-transform: capitalize;
+  font-weight: normal;
 
   @include media-horizontal {
     font-size: 22px;
   }
 }
+
 
 .list-element {
   display: flex;
