@@ -3,9 +3,11 @@
 
 body {
   background-color: #000000;
+  position: relative;
+  height: 100vh;
 
   @include media-horizontal {
-    overflow: hidden
+    overflow: hidden;
   }
 }
 
@@ -15,6 +17,7 @@ body {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+  min-height: 100%;
   padding: 5vw;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
@@ -73,6 +76,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   padding: 5px;
+  padding-left: 4vw;
 
   @include media-horizontal {
     width: 50%;
@@ -99,6 +103,29 @@ li {
   justify-content: space-between;
   width: 100%;
   padding-right: 1vw;
+  position: relative;
+  cursor: pointer;
+}
+
+.checked {
+  text-decoration: line-through;
+
+  /* Add a "checked" mark when clicked on */
+  &::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+    left: -5vw;
+
+    @include media-horizontal {
+      left: -3vw;
+    }
+  }
 }
 
 

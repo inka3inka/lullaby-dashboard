@@ -1,6 +1,7 @@
 const clock = document.querySelector('.clock');
-const listContainer = document.querySelector('.list');
-const list = document.querySelector('.list-elements');
+const container = document.querySelector('.container');
+const list = document.querySelector('.list');
+const listElements = document.querySelector('.list-elements');
 const video = document.querySelector('.video');
 const listName = document.querySelector('.list-name');
 const addTaskButton = document.querySelector('.button__add-task');
@@ -27,10 +28,11 @@ export function select(data) {
 
 // Load to do list
 export function loadList(data, listIndex) {
-  console.log(data.listIndex);
+  listName.innerText = "";
+  listElements.innerText = "";
 
   //List background
-  listContainer.style.backgroundColor = data.savedLists[listIndex].backgroundListColor;
+  container.style.backgroundColor = data.savedLists[listIndex].backgroundListColor;
 
   //List label
   listName.innerText = data.savedLists[listIndex].label;
@@ -39,14 +41,12 @@ export function loadList(data, listIndex) {
   //List elements
   data.savedLists[listIndex].toDos.map(element => {
     const newElement = document.createElement("li");
-    list.appendChild(newElement);
+    listElements.appendChild(newElement);
     newElement.style.color = element.color;
     newElement.classList.add("list-element");
-    newElement.innerHTML =
-      `${element.name}
-       <div class="list-element__edit">
-         <input type="checkbox" class="checkbox">
-       </div>`;
+    newElement.innerHTML = element.name;
+    newElement.addEventListener("click", (event) => event.target.classList.toggle("checked"))
   })
 
 }
+
