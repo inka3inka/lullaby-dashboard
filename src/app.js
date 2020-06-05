@@ -1,13 +1,16 @@
 import '../styles/main.scss';
-import {loadList, loadVideo} from "./utils";
+import {loadList, loadVideo, select, chooseList} from "./utils";
 import {showTime} from "./clock";
+
+const selectList = document.querySelector('.select-list');
+const chooseListButton = document.querySelector('.button__choose-list');
 
 window.addEventListener("DOMContentLoaded", () => {
 
 //Fetch json
 
-  // let myRequest = new Request('../configuration.json');
-  let myRequest = 'https://raw.githubusercontent.com/inka3inka/lullaby-dashboard/master/configuration.json';
+  let myRequest = new Request('../configuration.json');
+  // let myRequest = 'https://raw.githubusercontent.com/inka3inka/lullaby-dashboard/master/configuration.json';
 
   fetch(myRequest)
     .then(resp => resp.json())
@@ -18,10 +21,16 @@ window.addEventListener("DOMContentLoaded", () => {
     //Load youtube video
     loadVideo(configuration);
 
-    // Load to do list
-    loadList(configuration)
+    //Load list options
+    select(configuration);
 
+    //Load list
+    chooseListButton.addEventListener(
+      'click',
+      () => loadList(configuration, selectList.options[selectList.selectedIndex].value));
     });
+
+
 
   //Show clock time
   showTime();
