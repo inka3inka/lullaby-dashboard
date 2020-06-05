@@ -6,7 +6,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 //Fetch json
 
-  let myRequest = new Request('../configuration.json');
+  // let myRequest = new Request('../configuration.json');
+  let myRequest = 'https://raw.githubusercontent.com/inka3inka/lullaby-dashboard/master/configuration.json';
 
   fetch(myRequest)
     .then(resp => resp.json())

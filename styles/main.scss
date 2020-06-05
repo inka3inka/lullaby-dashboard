@@ -72,7 +72,6 @@ body {
   font-size: 26px;
   font-weight: bold;
   text-transform: uppercase;
-  border-radius: 5px;
   padding: 5px;
 
   @include media-horizontal {
@@ -86,7 +85,7 @@ body {
 li {
   font-size: 18px;
   margin: 2vw 0;
-  text-transform: capitalize;
+  text-transform: initial;
   font-weight: normal;
 
   @include media-horizontal {
