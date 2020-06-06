@@ -67,6 +67,7 @@ body {
   }
 }
 
+//Loaded list and list elements
 .list {
   display: flex;
   flex-direction: column;
@@ -75,7 +76,6 @@ body {
   font-size: 26px;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 5px;
   padding-left: 4vw;
 
   @include media-horizontal {
@@ -86,9 +86,13 @@ body {
   }
 }
 
+.list-name {
+  margin-bottom: 3vh;
+}
+
 li {
   font-size: 18px;
-  margin: 2vw 0;
+  padding: 1vw .5vw;
   text-transform: initial;
   font-weight: normal;
 
@@ -101,10 +105,14 @@ li {
 .list-element {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  //width: 100%;
   padding-right: 1vw;
   position: relative;
   cursor: pointer;
+
+  &:hover {
+    background-color: #b2b2b2;
+  }
 }
 
 .checked {
@@ -128,7 +136,7 @@ li {
   }
 }
 
-
+//Edit list elements
 .list-element__edit {
   display: flex;
   flex-direction: row;
@@ -144,3 +152,26 @@ li {
     height: 20px;
   }
 }
+
+
+//Select list
+.select {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3vh;
+
+  > * {
+    margin: .5vw;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #b2b2b2;
+    }
+  }
+}
+
