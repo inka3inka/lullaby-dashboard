@@ -6,7 +6,7 @@ const video = document.querySelector('.video');
 const listName = document.querySelector('.list-name');
 const addTaskButton = document.querySelector('.button__add-task');
 const listInput = document.querySelector('.list-input');
-const selectList = document.querySelector('.select-list')
+const selectList = document.querySelector('.select-list');
 
 //Load youtube video
 export function loadVideo(data) {
@@ -28,15 +28,10 @@ export function select(data) {
 
 // Load to do list
 export function loadList(data, listIndex) {
-  listName.innerText = "";
   listElements.innerText = "";
 
   //List background
   container.style.backgroundColor = data.savedLists[listIndex].backgroundListColor;
-
-  //List label
-  listName.innerText = data.savedLists[listIndex].label;
-  listName.style.color = data.savedLists[listIndex].fontListColor;
 
   //List elements
   data.savedLists[listIndex].toDos.map(element => {

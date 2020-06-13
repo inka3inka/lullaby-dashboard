@@ -3,7 +3,6 @@ import {loadList, loadVideo, select, chooseList} from "./utils";
 import {showTime} from "./clock";
 
 const selectList = document.querySelector('.select-list');
-const chooseListButton = document.querySelector('.button__choose-list');
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -21,11 +20,14 @@ window.addEventListener("DOMContentLoaded", () => {
     //Load youtube video
     loadVideo(configuration);
 
+    //Load landing page list
+    loadList(configuration, 0);
+
     //Load list options
     select(configuration);
 
     //Load list
-    chooseListButton.addEventListener(
+    selectList.addEventListener(
       'click',
       () => loadList(configuration, selectList.options[selectList.selectedIndex].value));
     });
