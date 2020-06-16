@@ -12,7 +12,7 @@ function initializeApp() {
   showTime();
 
   //Fetch json
-  let myRequest = new Request('../configuration.json');
+  let myRequest = new Request('configuration.json');
 
   fetch(myRequest)
     .then(resp => resp.json())
