@@ -3,125 +3,113 @@
   "savedLists":
     [
       {
-        "label": "Aenean rhoncus",
+        "label": "Wieczorny rytuał",
         "listId": "1",
-        "backgroundListColor": "#eaa0a4",
-        "fontListColor": "#5c5c5c",
+        "backgroundListColor": "#212121",
+        "fontListColor": "#f1f1f1",
         "toDos": [
           {
-            "name": "Sed felis nulla",
-            "color": "red"
+            "name": "Woda do kąpieli",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Morbi vel quam",
-            "color": "blue"
+            "name": "Uszy wytrzeć",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Sed vitae efficitur odio",
-            "color": "purple"
+            "name": "Witamina D",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Ed sit amet pulvinar ex, et varius est",
-            "color": "white"
+            "name": "Czesanie włosów",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Nunc a libero eget justo auctor lobortis eu nec nisl",
-            "color": "black"
+            "name": "Kolacja",
+            "color": "#f1f1f1"
+          },
+          {
+            "name": "Okna i rolety",
+            "color": "#f1f1f1"
+          },
+          {
+            "name": "Kocia kolacja",
+            "color": "#f1f1f1"
+          },
+          {
+            "name": "Kocie zabawki",
+            "color": "#f1f1f1"
           }
         ]
       },
       {
-        "label": "Morbi luctus velit sapien",
+        "label": "Wyjazd",
         "listId": "2",
-        "backgroundListColor": "#b4eeb4",
-        "fontListColor": "#ffffff",
+        "backgroundListColor": "#212121",
+        "fontListColor": "#f1f1f1",
         "toDos": [
           {
-            "name": "Nulla non tincidunt augue",
-            "color": "red"
+            "name": "Wózek",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Vel quam",
-            "color": "red"
+            "name": "Kapcie",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Efficitur odio",
-            "color": "red"
+            "name": "Klucze dla Ani",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Libero eget justo auctor lobortis eu nec",
-            "color": "red"
-          }
-        ]
-      },
-      {
-        "label": "Nam sit amet fringilla diam",
-        "listId": "3",
-        "backgroundListColor": "#a2b2b6",
-        "fontListColor": "#000000",
-        "toDos": [
-          {
-            "name": "Aenean porta fringilla sapien at eleifend",
-            "color": "red"
+            "name": "Ubrania do spania i na zmianę",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Nunc efficitur elit luctus",
-            "color": "red"
+            "name": "Kosmetyki do mycia",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Ante ultricies pellentesque",
-            "color": "red"
+            "name": "Kosmetyki do makijażu",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Nullam suscipit",
-            "color": "red"
+            "name": "Pieluchy",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Tortor id ultrices mol",
-            "color": "red"
+            "name": "1 słoiczek jedzenia",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Dui nulla bibendum orci",
-            "color": "red"
+            "name": "Chusteczki",
+            "color": "#f1f1f1"
           },
           {
-            "name": "A interdum velit nulla id dolor",
-            "color": "red"
+            "name": "Podkłady",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Donec vestibulum",
-            "color": "red"
+            "name": "Maść na oparzenia",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Sapien venenatis lectus",
-            "color": "red"
+            "name": "Zabawka do kąpieli",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Mattis tempor",
-            "color": "red"
+            "name": "Instrukcja do kotów",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Aenean sodales vel purus",
-            "color": "red"
+            "name": "Kocie wędki",
+            "color": "#f1f1f1"
           },
           {
-            "name": "Vitae laoreet",
-            "color": "red"
-          },
-          {
-            "name": "Sed pellentesque quis nulla at accumsan",
-            "color": "red"
-          },
-          {
-            "name": "Proin aliquet laoreet tellus eu maximus",
-            "color": "red"
-          },
-          {
-            "name": "Duis consequat tincidunt fringilla",
-            "color": "red"
+            "name": "Chrupki i puszki dla kotów",
+            "color": "#f1f1f1"
           }
         ]
       }
     ],
-  "embeddedYoutubeVideo": "https://www.youtube.com/embed/aGSKrC7dGcY"
+  "embeddedYoutubeVideo": "https://www.youtube.com/embed/XULUBg_ZcAU"
 }
