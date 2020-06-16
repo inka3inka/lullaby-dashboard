@@ -1,10 +1,12 @@
-import '../styles/main.scss';
+import logError from './logError';
 import {loadList, loadVideo, select, chooseList} from "./utils";
 import {showTime} from "./clock";
+import '../styles/main.scss';
 
 const selectList = document.querySelector('.select-list');
 
 window.addEventListener("DOMContentLoaded", initializeApp)
+
 
 function initializeApp() {
 
@@ -16,7 +18,8 @@ function initializeApp() {
 
   fetch(myRequest)
     .then(resp => resp.json())
-    .then(startApp);
+    .then(startApp)
+    .catch((err) => logError(err.message))
 }
 
 function startApp(configuration){
