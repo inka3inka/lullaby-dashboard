@@ -1,3 +1,5 @@
+import {getContrastYIQ} from "./clock";
+
 const clock = document.querySelector('.clock');
 const container = document.querySelector('.container');
 const list = document.querySelector('.list');
@@ -8,10 +10,12 @@ const addTaskButton = document.querySelector('.button__add-task');
 const listInput = document.querySelector('.list-input');
 const selectList = document.querySelector('.select-list');
 
+
 //Load youtube video
 export function loadVideo(data) {
   video.setAttribute("src", data.embeddedYoutubeVideo)
 }
+
 
 //Load lists' options
 
@@ -33,15 +37,29 @@ export function loadList(data, listIndex) {
   //List background
   container.style.backgroundColor = data.savedLists[listIndex].backgroundListColor;
 
+  //Clock color
+  getContrastYIQ(data.savedLists[listIndex].backgroundListColor);
+
   //List elements
+  const array = [];
+  // const addOrRemove = (arr, item) => arr.includes(item) ? arr.filter(i => i !== item) : [ ...arr, item ];
   data.savedLists[listIndex].toDos.map(element => {
     const newElement = document.createElement("li");
     listElements.appendChild(newElement);
     newElement.style.color = element.color;
     newElement.classList.add("list-element");
     newElement.innerHTML = element.name;
-    newElement.addEventListener("click", (event) => event.target.classList.toggle("checked"))
+    newElement.addEventListener("click", (event) => {
+      event.target.classList.toggle("checked");
+
+      // console.log(addOrRemove(array, event.target));
+
+    });
   })
+
+
+
+
 
 }
 
