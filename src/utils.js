@@ -41,7 +41,7 @@ export function loadList(data, listIndex) {
   getContrastYIQ(data.savedLists[listIndex].backgroundListColor);
 
   //List elements
-  const array = [];
+  // const array = [];
   // const addOrRemove = (arr, item) => arr.includes(item) ? arr.filter(i => i !== item) : [ ...arr, item ];
   data.savedLists[listIndex].toDos.map(element => {
     const newElement = document.createElement("li");
@@ -51,15 +51,12 @@ export function loadList(data, listIndex) {
     newElement.innerHTML = element.name;
     newElement.addEventListener("click", (event) => {
       event.target.classList.toggle("checked");
+      // array.push(event.target);
 
-      // console.log(addOrRemove(array, event.target));
+      // console.log(array);
 
     });
   })
-
-
-
-
 
 }
 
