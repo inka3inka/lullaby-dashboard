@@ -68,13 +68,18 @@ export function addListElement() {
   newTodos.appendChild(newElement);
   newElement.classList.add("list-element");
   newElement.innerHTML = `${listInput.value}
-<!--                          <div class="list-element__edit">-->
-<!--                            <input type="checkbox" class="checkbox">-->
-<!--                            <i class="far fa-edit"></i>-->
-<!--                            <i class="far fa-trash-alt"></i>-->
-<!--                          </div>-->
+                          <div class="list-element__edit">
+                            <i class="far fa-edit"></i>
+                            <i class="far fa-trash-alt"></i>
+                          </div>
 `;
   listInput.value = "";
   addTaskButton.setAttribute("disabled", "true")
 }
 
+
+//Change visibility
+
+export function changeVisibility() {
+
+}

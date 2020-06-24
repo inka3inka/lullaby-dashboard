@@ -9,6 +9,8 @@
 </head>
 <body>
   <article class="container">
+
+    <!--    Container to show list    -->
     <section class="list">
 <!--      <input type="text" class="list-input" placeholder="Add new task">-->
 <!--      <button class="button__add-task" disabled>Add task</button>-->
@@ -16,10 +18,18 @@
       <ul class="list-elements">
       </ul>
     </section>
-    <section class="new-list__container">
+
+    <!--     Container to show Add new list sheet    -->
+    <section class="new-list__container hidden">
       <div class="new-list__data">
-        <div>List name: <input></div>
-        <div>Background color: <input></div>
+        <div>
+          List name:
+          <input>
+        </div>
+        <div>
+          Background color:
+          <input>
+        </div>
         <div class="new-list__add-task-inputs">
           To do:
           <input type="text" class="list-input list-input__name" placeholder="Add new task">
@@ -33,15 +43,20 @@
       <button class="btn button__save-list">Save list</button>
 
     </section>
+
     <div>
+      <!--    Container to show embedded movie    -->
       <figure>
         <iframe class="video" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </figure>
+      <!--    Container to show time    -->
       <section class="clock">
         Time
       </section>
+      <!--    Container to show select list button    -->
       <section class="select">
         <select class="select-list" name="lists"></select>
+        <button class="options__button btn btn--open-manager">Options</button>
       </section>
 
     </div>
