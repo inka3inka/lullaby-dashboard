@@ -6,7 +6,6 @@
         "label": "Aenean rhoncus",
         "listId": "1",
         "backgroundListColor": "#000000",
-        "fontListColor": "#5c5c5c",
         "toDos": [
           {
             "name": "Sed felis nulla",
@@ -34,7 +33,6 @@
         "label": "Morbi luctus velit sapien",
         "listId": "2",
         "backgroundListColor": "#b4eeb4",
-        "fontListColor": "#ffffff",
         "toDos": [
           {
             "name": "Nulla non tincidunt augue",
@@ -58,7 +56,6 @@
         "label": "Nam sit amet fringilla diam",
         "listId": "3",
         "backgroundListColor": "#a2b2b6",
-        "fontListColor": "#000000",
         "toDos": [
           {
             "name": "Aenean porta fringilla sapien at eleifend",

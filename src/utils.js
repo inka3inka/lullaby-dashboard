@@ -8,7 +8,8 @@ const video = document.querySelector('.video');
 const listName = document.querySelector('.list-name');
 const selectList = document.querySelector('.select-list');
 const newTodos = document.querySelector('.new-list__todos');
-const listInput = document.querySelector('.list-input');
+const listInputName = document.querySelector('.list-input__name');
+const listInputColor = document.querySelector('.list-input__color');
 const addTaskButton = document.querySelector('.button__add-task');
 
 
@@ -67,13 +68,13 @@ export function addListElement() {
   const newElement = document.createElement("li");
   newTodos.appendChild(newElement);
   newElement.classList.add("list-element");
-  newElement.innerHTML = `${listInput.value}
+  newElement.innerHTML = `<div style="color:${listInputColor.value}">${listInputName.value}</div>
                           <div class="list-element__edit">
                             <i class="far fa-edit"></i>
                             <i class="far fa-trash-alt"></i>
                           </div>
 `;
-  listInput.value = "";
+  listInputName.value = "";
   addTaskButton.setAttribute("disabled", "true")
 }
 
@@ -82,5 +83,19 @@ export function addListElement() {
 
 export function changeVisibility(element) {
     element.classList.toggle("hidden");
+
+}
+
+//New list object
+
+function List(label, listId, backgroundListColor, toDos) {
+  this.label = label;
+  this.listId = listId;
+  this.backgroundListColor = backgroundListColor;
+  this.toDos = toDos
+}
+
+export function saveList(label, listId, backgroundListColor, toDos) {
+  return new List(label, listId, backgroundListColor, toDos);
 
 }

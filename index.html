@@ -10,56 +10,49 @@
 <body>
   <article class="container">
 
-    <!--    Container to show list    -->
+<!--    Container showing chose list    -->
     <section class="list">
-<!--      <input type="text" class="list-input" placeholder="Add new task">-->
-<!--      <button class="button__add-task" disabled>Add task</button>-->
       <div class="list-name"></div>
-      <ul class="list-elements">
-      </ul>
+      <ul class="list-elements"></ul>
     </section>
 
-
-    <!--     Container to edit lists    -->
+<!--     Container to edit lists    -->
     <section class="options__container hidden">
       <div class="close-button__container">
         <i class="far fa-window-close"></i>
       </div>
 
-      <!--     Container to show list options    -->
+  <!--     Container showing list's options    -->
       <div class="buttons__container">
         <button class="add-new-list__button btn">Add new list</button>
         <button class="edit-list__button btn">Edit current list</button>
       </div>
 
-      <!--     Container to show Add new list sheet    -->
+  <!--     Container Add new list sheet    -->
       <div class="new-list__container hidden">
         <div class="new-list__data">
           <div>
             List name:
-            <input>
+            <input type="text" class="list-label">
           </div>
           <div>
             Background color:
-            <input>
+            <input type="text" class="background-color">
           </div>
           <div class="new-list__add-task-inputs">
             To do:
             <input type="text" class="list-input list-input__name" placeholder="Add new task">
             <input type="text" class="list-input list-input__color" placeholder="Add task's color">
             <button class="btn button__add-task" disabled>Add task</button></div>
-          <ul class="new-list__todos">
-
-          </ul>
+          <ul class="new-list__todos"></ul>
         </div>
-
         <button class="btn button__save-list">Save list</button>
       </div>
 
     </section>
 
     <div>
-      <!--    Container to show embedded movie    -->
+  <!--    Container to show embedded movie    -->
       <figure>
         <iframe
             class="video"
@@ -70,12 +63,12 @@
         </iframe>
       </figure>
 
-      <!--    Container to show time    -->
+  <!--    Container to show time    -->
       <section class="clock">
         Time
       </section>
 
-      <!--    Container to show select list button    -->
+  <!--    Container to show select list button    -->
       <section class="select">
         <select class="select-list" name="lists"></select>
         <button class="options__button btn btn--open-manager">Options</button>
@@ -86,3 +79,7 @@
   <script src="./build/out.js"></script>
 </body>
 </html>
+
+
+<!--      <input type="text" class="list-input" placeholder="Add new task">-->
+<!--      <button class="button__add-task" disabled>Add task</button>-->
