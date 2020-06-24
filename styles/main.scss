@@ -18,7 +18,7 @@ body {
   justify-content: flex-end;
   width: 100%;
   min-height: 100%;
-  padding: 5vw;
+  //padding: 5vw;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
 
@@ -219,3 +219,69 @@ li {
   border-color: #777777 transparent transparent transparent;
 }
 
+//New list input
+.new-list__container {
+  position: absolute;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vh;
+
+  @include media-horizontal {
+    width: 35vw;
+    height: 70vh;
+    padding: 2vw;
+    top: 15%;
+    left: 25%;
+    justify-content: space-between;
+  }
+
+  .new-list__data {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto 1vw;
+
+    div {
+      padding-bottom: 2vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+
+      input {
+        margin-top: 1vh;
+        font-size: 18px;
+      }
+    }
+
+    .new-list__add-task-inputs {
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    .new-list__todos {
+      overflow: auto;
+      height: 70vh;
+
+      @include media-horizontal {
+        height: 50vh;
+
+      }
+    }
+  }
+}
+
+.btn {
+  width: 50%;
+  height: 5vh;
+  margin: 0 auto;
+  font-size: 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

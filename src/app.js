@@ -1,8 +1,12 @@
 import '../styles/main.scss';
-import {loadList, loadVideo, select, chooseList} from "./utils";
+import {loadList, loadVideo, select, chooseList, addListElement} from "./utils";
 import {showTime} from "./clock";
 
 const selectList = document.querySelector('.select-list');
+const addTaskButton = document.querySelector('.button__add-task');
+const listInput = document.querySelector('.list-input');
+
+
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -37,8 +41,24 @@ window.addEventListener("DOMContentLoaded", () => {
   //Show clock time
   showTime();
 
+  // //Add task by click button
+  addTaskButton.addEventListener('click', addListElement);
 
-
+  //Key press effects
+  listInput.addEventListener('keyup', function(event) {
+    //Add task by press Enter key
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      addTaskButton.click();
+    }
+    //Validate input value
+    else if (listInput.value.trim() != "") {
+      addTaskButton.removeAttribute("disabled")
+    }
+    else {
+      addTaskButton.setAttribute("disabled", "true")
+    }
+  })
 
 
 
@@ -76,24 +96,9 @@ window.addEventListener("DOMContentLoaded", () => {
   //   addTaskButton.setAttribute("disabled", "true")
   // }
   //
-  // //Add task by click button
-  // addTaskButton.addEventListener('click', addListElement);
+
   //
-  // //Key press effects
-  // listInput.addEventListener('keyup', function(event) {
-  //   //Add task by press Enter key
-  //   if (event.keyCode === 13) {
-  //     event.preventDefault();
-  //     addTaskButton.click();
-  //   }
-  //   //Validate input value
-  //   else if (listInput.value.trim() != "") {
-  //     addTaskButton.removeAttribute("disabled")
-  //   }
-  //   else {
-  //     addTaskButton.setAttribute("disabled", "true")
-  //   }
-  // })
+
 
 
 

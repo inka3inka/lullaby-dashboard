@@ -6,9 +6,10 @@ const list = document.querySelector('.list');
 const listElements = document.querySelector('.list-elements');
 const video = document.querySelector('.video');
 const listName = document.querySelector('.list-name');
-const addTaskButton = document.querySelector('.button__add-task');
-const listInput = document.querySelector('.list-input');
 const selectList = document.querySelector('.select-list');
+const newTodos = document.querySelector('.new-list__todos');
+const listInput = document.querySelector('.list-input');
+const addTaskButton = document.querySelector('.button__add-task');
 
 
 //Load youtube video
@@ -58,5 +59,22 @@ export function loadList(data, listIndex) {
     });
   })
 
+}
+
+//List handler
+
+export function addListElement() {
+  const newElement = document.createElement("li");
+  newTodos.appendChild(newElement);
+  newElement.classList.add("list-element");
+  newElement.innerHTML = `${listInput.value}
+<!--                          <div class="list-element__edit">-->
+<!--                            <input type="checkbox" class="checkbox">-->
+<!--                            <i class="far fa-edit"></i>-->
+<!--                            <i class="far fa-trash-alt"></i>-->
+<!--                          </div>-->
+`;
+  listInput.value = "";
+  addTaskButton.setAttribute("disabled", "true")
 }
 
