@@ -68,13 +68,20 @@ export function addListElement() {
   const newElement = document.createElement("li");
   newTodos.appendChild(newElement);
   newElement.classList.add("list-element");
-  newElement.innerHTML = `<div style="color:${listInputColor.value}">${listInputName.value}</div>
+  newElement.innerHTML = `<div 
+                            style="color:${listInputColor.value}" 
+                            name="${listInputName.value}"
+                            color="${listInputColor.value}"
+                            >
+                            ${listInputName.value}
+                          </div>
                           <div class="list-element__edit">
                             <i class="far fa-edit"></i>
                             <i class="far fa-trash-alt"></i>
                           </div>
 `;
   listInputName.value = "";
+  listInputColor.value = "";
   addTaskButton.setAttribute("disabled", "true")
 }
 

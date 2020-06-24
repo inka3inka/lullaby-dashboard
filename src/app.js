@@ -55,6 +55,9 @@ window.addEventListener("DOMContentLoaded", () => {
         changeVisibility(optionsContainer);
         if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
         if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
+        listName.value = "";
+        backgroundListColor.value = "";
+        newListElements.innerHTML = "";
       });
 
       //Open add new list container
@@ -84,15 +87,23 @@ window.addEventListener("DOMContentLoaded", () => {
       })
 
       saveListButton.addEventListener("click", () => {
+
+        function ToDos(name, color) {
+          this.name = name;
+          this.color = color
+        }
+
         const listId = configuration.savedLists.length + 1;
-        console.log(newListElements.children);
-        // console.log(saveList(listName.value, listId, backgroundListColor.value, newListElements.children.map(element => {
-        //   "name": element.
-        // })))
+        const array = Array.from(newListElements.children);
+        console.log(array.map(element => new ToDos(element.children[0].attributes.name.value, element.children[0].attributes.color.value)));
+        console.log(saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.children[0].attributes.name.value, element.children[0].attributes.color.value))
+
+        ))
       })
     });
 
 
+  //element.children[0].attributes.color.value
 
   //Show clock time
   showTime();
