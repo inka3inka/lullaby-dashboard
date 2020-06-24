@@ -203,7 +203,7 @@ li {
 }
 
 //New list input
-.new-list__container {
+.options__container {
   position: absolute;
   z-index: 100;
   width: 100vw;
@@ -221,9 +221,25 @@ li {
     padding: 2vw;
     top: 5%;
     left: 25%;
-    justify-content: space-between;
     border: 1px solid #000000;
     border-radius: 10px;
+  }
+
+  .buttons__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .buttons__container.hidden {
+    display: none
+  }
+
+  .new-list__container {
+
+    @include media-horizontal {
+      justify-content: space-between;
+    }
   }
 
   .new-list__data {
@@ -299,3 +315,19 @@ li {
 .hidden {
   display: none;
 }
+
+.close-button__container {
+  display: flex;
+  justify-content: flex-end;
+
+  .fa-window-close {
+    font-size: 40px;
+    //text-align: right;
+    width: 40px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+

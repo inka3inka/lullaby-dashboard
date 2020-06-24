@@ -1,12 +1,16 @@
 import '../styles/main.scss';
-import {loadList, loadVideo, select, chooseList, addListElement} from "./utils";
+import {loadList, loadVideo, select, chooseList, addListElement, changeVisibility} from "./utils";
 import {showTime} from "./clock";
 
 const selectList = document.querySelector('.select-list');
 const addTaskButton = document.querySelector('.button__add-task');
 const listInput = document.querySelector('.list-input');
-
-
+const optionsButton = document.querySelector('.options__button');
+const optionsContainer = document.querySelector('.options__container');
+const optionsButtons = document.querySelector('.buttons__container');
+const close = document.querySelector('.fa-window-close');
+const newListManager = document.querySelector('.new-list__container');
+const openNewListManagerButton = document.querySelector('.add-new-list__button');
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -41,7 +45,27 @@ window.addEventListener("DOMContentLoaded", () => {
   //Show clock time
   showTime();
 
-  // //Add task by click button
+  //Show lists' options
+  optionsButton.addEventListener("click", () => {
+    changeVisibility(optionsContainer);
+
+  });
+
+  //Close list's options
+  close.addEventListener("click", () => {
+    changeVisibility(optionsContainer);
+    if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
+    if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
+  });
+
+  //Open add new list container
+  openNewListManagerButton.addEventListener("click", () => {
+    changeVisibility(optionsButtons);
+    changeVisibility(newListManager);
+
+  });
+
+  //Add task by click button
   addTaskButton.addEventListener('click', addListElement);
 
   //Key press effects

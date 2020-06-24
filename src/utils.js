@@ -80,6 +80,7 @@ export function addListElement() {
 
 //Change visibility
 
-export function changeVisibility() {
+export function changeVisibility(element) {
+    element.classList.toggle("hidden");
 
 }
