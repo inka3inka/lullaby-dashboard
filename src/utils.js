@@ -11,6 +11,9 @@ const newTodos = document.querySelector('.new-list__todos');
 const listInputName = document.querySelector('.list-input__name');
 const listInputColor = document.querySelector('.list-input__color');
 const addTaskButton = document.querySelector('.button__add-task');
+const activeListName = document.querySelector('.active-list__label');
+const activeListEditInputName = document.querySelector('.active-list__name');
+const activeListEditInputColor = document.querySelector('.active-list__background-color');
 
 
 
@@ -60,6 +63,13 @@ export function loadList(data, listIndex) {
 
     });
   })
+
+  /*Edited list*/
+  activeListName.innerText = data.savedLists[listIndex].label;
+  activeListEditInputName.value = data.savedLists[listIndex].label;
+  activeListEditInputColor.value = data.savedLists[listIndex].backgroundListColor;
+
+
 
 }
 

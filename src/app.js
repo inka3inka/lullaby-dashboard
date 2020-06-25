@@ -3,11 +3,9 @@ import {
   loadList,
   loadVideo,
   select,
-  chooseList,
   addListElement,
   changeVisibility,
   saveList,
-  removeListElement
 } from "./utils";
 import {showTime} from "./clock";
 
@@ -24,6 +22,13 @@ const saveListButton = document.querySelector('.button__save-list');
 const listName = document.querySelector('.list-label');
 const backgroundListColor = document.querySelector('.background-color');
 const newListElements = document.querySelector('.new-list__todos');
+const openEditListButton = document.querySelector('.edit-list__button');
+const editListManager = document.querySelector('.edit-list__container');
+const saveChangesButton = document.querySelector('.button__save-changes');
+const activeListEditInputName = document.querySelector('.active-list__name');
+const activeListEditInputColor = document.querySelector('.active-list__background-color');
+
+
 
 
 
@@ -64,6 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
       close.addEventListener("click", () => {
         changeVisibility(optionsContainer);
         if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
+        if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
         if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
         listName.value = "";
         backgroundListColor.value = "";
@@ -79,6 +85,30 @@ window.addEventListener("DOMContentLoaded", () => {
 
       //Add task by click button
       addTaskButton.addEventListener('click', addListElement);
+
+      //Open add new list container
+      openEditListButton.addEventListener("click", () => {
+        changeVisibility(optionsButtons);
+        changeVisibility(editListManager);
+
+      });
+
+      //Save edited current list's elements
+
+      saveChangesButton.addEventListener("click", () => {
+        console.log("Hello");
+        const listId = selectList.options[selectList.selectedIndex].value;
+        console.log(selectList.options[selectList.selectedIndex]);
+        const toDos = configuration.savedLists[listId].toDos;
+        console.log(toDos);
+        const changedList = saveList(activeListEditInputName.value, listId, activeListEditInputColor.value, toDos);
+        delete configuration.savedLists[listId];
+        configuration.savedLists.push(changedList);
+        select(configuration.savedLists)
+
+
+      })
+
 
       //Key press effects
       listInput.addEventListener('keyup', function(event) {
@@ -116,6 +146,8 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       )
+
+
 
     });
 
