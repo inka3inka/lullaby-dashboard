@@ -14,6 +14,7 @@ const addTaskButton = document.querySelector('.button__add-task');
 const activeListName = document.querySelector('.active-list__label');
 const activeListEditInputName = document.querySelector('.active-list__name');
 const activeListEditInputColor = document.querySelector('.active-list__background-color');
+const activeListEditTodos = document.querySelector('.changed-list__todos');
 
 
 
@@ -68,6 +69,15 @@ export function loadList(data, listIndex) {
   activeListName.innerText = data.savedLists[listIndex].label;
   activeListEditInputName.value = data.savedLists[listIndex].label;
   activeListEditInputColor.value = data.savedLists[listIndex].backgroundListColor;
+
+  data.savedLists[listIndex].toDos.map(element => {
+    const newElement = document.createElement("li");
+    activeListEditTodos.appendChild(newElement);
+    // newElement.style.color = element.color;
+    // newElement.classList.add("list-element");
+    newElement.innerHTML = `<div>Name: <input value=${element.name}></div><div>Color: <input value=${element.color}></div>`
+
+  })
 
 
 
