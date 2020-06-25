@@ -13,6 +13,7 @@ const listInputColor = document.querySelector('.list-input__color');
 const addTaskButton = document.querySelector('.button__add-task');
 
 
+
 //Load youtube video
 export function loadVideo(data) {
   video.setAttribute("src", data.embeddedYoutubeVideo)
@@ -82,8 +83,23 @@ export function addListElement() {
 `;
   listInputName.value = "";
   listInputColor.value = "";
-  addTaskButton.setAttribute("disabled", "true")
+  addTaskButton.setAttribute("disabled", "true");
+
+  //Trash
+  const remover = document.querySelectorAll('.fa-trash-alt');
+  // console.log([...remover]);
+  [...remover].map(element => element.addEventListener("click", function(event){newTodos.removeChild(this.parentElement.parentElement)}))
+
+  //Edit
+  const editor = document.querySelectorAll('.fa-edit');
+  [...editor].map(element => element.addEventListener("click", function(event){
+    listInputName.value = this.parentElement.parentElement.firstChild.getAttribute('name');
+    listInputColor.value = this.parentElement.parentElement.firstChild.getAttribute('color');
+    newTodos.removeChild(this.parentElement.parentElement);
+    addTaskButton.removeAttribute("disabled")
+  }))
 }
+
 
 
 //Change visibility

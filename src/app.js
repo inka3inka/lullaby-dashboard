@@ -1,5 +1,14 @@
 import '../styles/main.scss';
-import {loadList, loadVideo, select, chooseList, addListElement, changeVisibility, saveList} from "./utils";
+import {
+  loadList,
+  loadVideo,
+  select,
+  chooseList,
+  addListElement,
+  changeVisibility,
+  saveList,
+  removeListElement
+} from "./utils";
 import {showTime} from "./clock";
 
 const selectList = document.querySelector('.select-list');
@@ -15,6 +24,7 @@ const saveListButton = document.querySelector('.button__save-list');
 const listName = document.querySelector('.list-label');
 const backgroundListColor = document.querySelector('.background-color');
 const newListElements = document.querySelector('.new-list__todos');
+
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -106,13 +116,12 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       )
+
     });
 
 
   //Show clock time
   showTime();
-
-
 
 
 
