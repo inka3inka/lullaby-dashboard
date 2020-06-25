@@ -29,7 +29,6 @@ export function select(data) {
     newElement.setAttribute("value", idx);
     newElement.innerHTML = list.label;
   })
-
 }
 
 

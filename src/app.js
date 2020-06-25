@@ -99,8 +99,9 @@ window.addEventListener("DOMContentLoaded", () => {
         const newList = saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.children[0].attributes.name.value, element.children[0].attributes.color.value))
 
         )
+        configuration.savedLists.push(newList);
 
-        select([...configuration.savedLists, newList])
+        select(configuration.savedLists)
 
       }
 
