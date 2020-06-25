@@ -22,7 +22,8 @@ export function loadVideo(data) {
 //Load lists' options
 
 export function select(data) {
-  data.savedLists.map((list,idx) => {
+  selectList.innerHTML = "";
+  data.map((list,idx) => {
     const newElement = document.createElement("option");
     selectList.appendChild(newElement);
     newElement.setAttribute("value", idx);

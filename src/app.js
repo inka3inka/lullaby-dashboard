@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
     loadList(configuration, 0);
 
     //Load list options
-    select(configuration);
+    select(configuration.savedLists);
 
     //Load list
     selectList.addEventListener(
@@ -96,57 +96,21 @@ window.addEventListener("DOMContentLoaded", () => {
         const listId = configuration.savedLists.length + 1;
         const array = Array.from(newListElements.children);
         console.log(array.map(element => new ToDos(element.children[0].attributes.name.value, element.children[0].attributes.color.value)));
-        console.log(saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.children[0].attributes.name.value, element.children[0].attributes.color.value))
+        const newList = saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.children[0].attributes.name.value, element.children[0].attributes.color.value))
 
-        ))
-      })
+        )
+
+        select([...configuration.savedLists, newList])
+
+      }
+
+      )
     });
 
-
-  //element.children[0].attributes.color.value
 
   //Show clock time
   showTime();
 
-
-
-
-
-
-
-
-  // fetch("https://cors-anywhere.herokuapp.com/https://github.com/autioch/github-fetch-test/blob/master/index.html#L16", {
-  //   method: 'GET'
-  // })
-  //   .then(resp => console.log(resp))
-  //   // .then(resp => console.log(resp));
-
-  // console.log(configuration);
-
-
-
-
-  // loadList()
-
-//******* Milestone 3 ***************
-//List handler
-
-  // function addListElement() {
-  //   const newElement = document.createElement("li");
-  //   list.appendChild(newElement);
-  //   newElement.classList.add("list-element");
-  //   newElement.innerHTML = `${listInput.value}
-  //                           <div class="list-element__edit">
-  //                             <input type="checkbox" class="checkbox">
-  //                             <i class="far fa-edit"></i>
-  //                             <i class="far fa-trash-alt"></i>
-  //                           </div>`;
-  //   listInput.value = "";
-  //   addTaskButton.setAttribute("disabled", "true")
-  // }
-  //
-
-  //
 
 
 
