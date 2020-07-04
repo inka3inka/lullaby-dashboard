@@ -27,6 +27,8 @@ const editListManager = document.querySelector('.edit-list__container');
 const saveChangesButton = document.querySelector('.button__save-changes');
 const activeListEditInputName = document.querySelector('.active-list__name');
 const activeListEditInputColor = document.querySelector('.active-list__background-color');
+const activeListEditTodos = document.querySelector('.changed-list__todos');
+
 
 
 
@@ -96,10 +98,15 @@ window.addEventListener("DOMContentLoaded", () => {
       //Save edited current list's elements
 
       saveChangesButton.addEventListener("click", () => {
+
+        function ToDos(name, color) {
+          this.name = name;
+          this.color = color
+        }
+
         const listId = selectList.options[selectList.selectedIndex].value;
-        console.log(selectList.options[selectList.selectedIndex]);
-        const toDos = configuration.savedLists[listId].toDos;
-        console.log(toDos);
+        const array = Array.from(activeListEditTodos.children);
+        const toDos = array.map(element => new ToDos(element.firstChild.lastChild.value, element.lastChild.lastChild.value));
         const changedList = saveList(activeListEditInputName.value, listId, activeListEditInputColor.value, toDos);
         delete configuration.savedLists[listId];
         configuration.savedLists[listId] = changedList;

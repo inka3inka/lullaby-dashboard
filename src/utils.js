@@ -66,6 +66,7 @@ export function loadList(data, listIndex) {
   })
 
   /*Edited list*/
+  activeListEditTodos.innerText = "";
   activeListName.innerText = data.savedLists[listIndex].label;
   activeListEditInputName.value = data.savedLists[listIndex].label;
   activeListEditInputColor.value = data.savedLists[listIndex].backgroundListColor;
@@ -75,7 +76,8 @@ export function loadList(data, listIndex) {
     activeListEditTodos.appendChild(newElement);
     // newElement.style.color = element.color;
     // newElement.classList.add("list-element");
-    newElement.innerHTML = `<div>Name: <input value=${element.name}></div><div>Color: <input value=${element.color}></div>`
+    newElement.innerHTML = `<div>Name: <input type="text" value=${element.name}></div><div>Color: <input type="text" value=${element.color}></div>`;
+
 
   })
 
@@ -105,13 +107,13 @@ export function addListElement() {
   [...remover].map(element => element.addEventListener("click", function(event){newTodos.removeChild(this.parentElement.parentElement)}))
 
   //Edit
-  const editor = document.querySelectorAll('.fa-edit');
-  [...editor].map(element => element.addEventListener("click", function(event){
-    listInputName.value = this.parentElement.parentElement.firstChild.getAttribute('name');
-    listInputColor.value = this.parentElement.parentElement.firstChild.getAttribute('color');
-    newTodos.removeChild(this.parentElement.parentElement);
-    addTaskButton.removeAttribute("disabled")
-  }))
+  // const editor = document.querySelectorAll('.fa-edit');
+  // [...editor].map(element => element.addEventListener("click", function(event){
+  //   listInputName.value = this.parentElement.parentElement.firstChild.getAttribute('name');
+  //   listInputColor.value = this.parentElement.parentElement.firstChild.getAttribute('color');
+  //   newTodos.removeChild(this.parentElement.parentElement);
+  //   addTaskButton.removeAttribute("disabled")
+  // }))
 }
 
 

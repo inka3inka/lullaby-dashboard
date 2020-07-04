@@ -331,3 +331,9 @@ li {
   }
 }
 
+//Edit list elements
+
+.changed-list__todos-container {
+  overflow: auto;
+  height: 50vh;
+}
