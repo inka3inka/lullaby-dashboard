@@ -76,8 +76,13 @@ export function loadList(data, listIndex) {
     activeListEditTodos.appendChild(newElement);
     // newElement.style.color = element.color;
     // newElement.classList.add("list-element");
-    newElement.innerHTML = `<div>Name: <input type="text" value=${element.name}></div><div>Color: <input type="text" value=${element.color}></div>`;
-
+    newElement.innerHTML = `<div>Name: <input type="text" value=${element.name}></div><div>Color: <input type="text" value=${element.color}></div><div class="list-element__edit">
+                            <i class="far fa-trash-alt"></i>
+                          </div>`;
+  //Trash
+      const remover = document.querySelectorAll('.changed-list__todos .fa-trash-alt');
+      // console.log([...remover]);
+      [...remover].map(element => element.addEventListener("click", function(event){activeListEditTodos.removeChild(this.parentElement.parentElement)}))
 
   })
 
@@ -102,7 +107,7 @@ export function addListElement() {
   // addTaskButton.setAttribute("disabled", "true");
 
   //Trash
-  const remover = document.querySelectorAll('.fa-trash-alt');
+  const remover = document.querySelectorAll('.new-list__todos .fa-trash-alt');
   // console.log([...remover]);
   [...remover].map(element => element.addEventListener("click", function(event){newTodos.removeChild(this.parentElement.parentElement)}))
 
