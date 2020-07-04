@@ -76,9 +76,20 @@ export function loadList(data, listIndex) {
     activeListEditTodos.appendChild(newElement);
     // newElement.style.color = element.color;
     // newElement.classList.add("list-element");
-    newElement.innerHTML = `<div>Name: <input type="text" value=${element.name}></div><div>Color: <input type="text" value=${element.color}></div><div class="list-element__edit">
+
+    newElement.classList.add("list-element");
+    newElement.innerHTML = `<div>
+                            <input type="text" class="list-input list-input__name" value=${element.name}>
+                            <input type="text" class="list-input list-input__color" value=${element.color}>
+                          </div>
+                          <div class="list-element__edit">
                             <i class="far fa-trash-alt"></i>
-                          </div>`;
+                          </div>
+`;
+
+    // newElement.innerHTML = `<div>Name: <input type="text" value=${element.name}></div><div>Color: <input type="text" value=${element.color}></div><div class="list-element__edit">
+    //                         <i class="far fa-trash-alt"></i>
+    //                       </div>`;
   //Trash
       const remover = document.querySelectorAll('.changed-list__todos .fa-trash-alt');
       // console.log([...remover]);
@@ -92,9 +103,9 @@ export function loadList(data, listIndex) {
 
 //List handler
 
-export function addListElement() {
+export function addListElement(todosList) {
   const newElement = document.createElement("li");
-  newTodos.appendChild(newElement);
+  todosList.appendChild(newElement);
   newElement.classList.add("list-element");
   newElement.innerHTML = `<div>
                             <input type="text" class="list-input list-input__name" placeholder="Add new task">
@@ -107,9 +118,9 @@ export function addListElement() {
   // addTaskButton.setAttribute("disabled", "true");
 
   //Trash
-  const remover = document.querySelectorAll('.new-list__todos .fa-trash-alt');
+  const remover = document.querySelectorAll('.fa-trash-alt');
   // console.log([...remover]);
-  [...remover].map(element => element.addEventListener("click", function(event){newTodos.removeChild(this.parentElement.parentElement)}))
+  [...remover].map(element => element.addEventListener("click", function(event){todosList.removeChild(this.parentElement.parentElement)}))
 
   //Edit
   // const editor = document.querySelectorAll('.fa-edit');

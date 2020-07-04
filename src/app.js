@@ -10,7 +10,8 @@ import {
 import {showTime} from "./clock";
 
 const selectList = document.querySelector('.select-list');
-const addTaskButton = document.querySelector('.button__add-task');
+const addTaskButtonNewList = document.querySelector('.new-list__container .button__add-task');
+const addTaskButtonEditedList = document.querySelector('.edit-list__container .button__add-task');
 const listInput = document.querySelector('.list-input');
 const optionsButton = document.querySelector('.options__button');
 const optionsContainer = document.querySelector('.options__container');
@@ -28,6 +29,7 @@ const saveChangesButton = document.querySelector('.button__save-changes');
 const activeListEditInputName = document.querySelector('.active-list__name');
 const activeListEditInputColor = document.querySelector('.active-list__background-color');
 const activeListEditTodos = document.querySelector('.changed-list__todos');
+const newTodos = document.querySelector('.new-list__todos');
 
 
 
@@ -86,7 +88,8 @@ window.addEventListener("DOMContentLoaded", () => {
       });
 
       //Add task by click button
-      addTaskButton.addEventListener('click', addListElement);
+      addTaskButtonNewList.addEventListener('click', () => addListElement(newTodos));
+      addTaskButtonEditedList.addEventListener('click', () => addListElement(activeListEditTodos))
 
       //Open add new list container
       openEditListButton.addEventListener("click", () => {
@@ -106,7 +109,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const listId = selectList.options[selectList.selectedIndex].value;
         const array = Array.from(activeListEditTodos.children);
-        const toDos = array.map(element => new ToDos(element.firstChild.lastChild.value, element.lastChild.lastChild.value));
+        const toDos = array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value));
         const changedList = saveList(activeListEditInputName.value, listId, activeListEditInputColor.value, toDos);
         delete configuration.savedLists[listId];
         configuration.savedLists[listId] = changedList;
@@ -121,14 +124,14 @@ window.addEventListener("DOMContentLoaded", () => {
         //Add task by press Enter key
         if (event.keyCode === 13) {
           event.preventDefault();
-          addTaskButton.click();
+          addTaskButtonNewList.click();
         }
         //Validate input value
         else if (saveListButton.value.trim() != "") {
-          addTaskButton.removeAttribute("disabled")
+          addTaskButtonNewList.removeAttribute("disabled")
         }
         else {
-          addTaskButton.setAttribute("disabled", "true")
+          addTaskButtonNewList.setAttribute("disabled", "true")
         }
       })
 
