@@ -36,8 +36,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 //Fetch json
 
-  let myRequest = new Request('../configuration.json');
-  // let myRequest = 'https://raw.githubusercontent.com/inka3inka/lullaby-dashboard/master/configuration.json';
+  // let myRequest = new Request('../configuration.json');
+  let myRequest = 'https://raw.githubusercontent.com/inka3inka/lullaby-dashboard/master/configuration.json';
 
   fetch(myRequest)
     .then(resp => resp.json())
@@ -96,14 +96,13 @@ window.addEventListener("DOMContentLoaded", () => {
       //Save edited current list's elements
 
       saveChangesButton.addEventListener("click", () => {
-        console.log("Hello");
         const listId = selectList.options[selectList.selectedIndex].value;
         console.log(selectList.options[selectList.selectedIndex]);
         const toDos = configuration.savedLists[listId].toDos;
         console.log(toDos);
         const changedList = saveList(activeListEditInputName.value, listId, activeListEditInputColor.value, toDos);
         delete configuration.savedLists[listId];
-        configuration.savedLists.push(changedList);
+        configuration.savedLists[listId] = changedList;
         select(configuration.savedLists)
 
 
@@ -111,14 +110,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
       //Key press effects
-      listInput.addEventListener('keyup', function(event) {
+      saveListButton.addEventListener('keyup', function(event) {
         //Add task by press Enter key
         if (event.keyCode === 13) {
           event.preventDefault();
           addTaskButton.click();
         }
         //Validate input value
-        else if (listInput.value.trim() != "") {
+        else if (saveListButton.value.trim() != "") {
           addTaskButton.removeAttribute("disabled")
         }
         else {
@@ -127,6 +126,7 @@ window.addEventListener("DOMContentLoaded", () => {
       })
 
       saveListButton.addEventListener("click", () => {
+        console.log("click")
 
         function ToDos(name, color) {
           this.name = name;
@@ -135,8 +135,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const listId = configuration.savedLists.length + 1;
         const array = Array.from(newListElements.children);
-        console.log(array.map(element => new ToDos(element.children[0].attributes.name.value, element.children[0].attributes.color.value)));
-        const newList = saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.children[0].attributes.name.value, element.children[0].attributes.color.value))
+        console.log(array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value)));
+        const newList = saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value))
 
         )
         configuration.savedLists.push(newList);
