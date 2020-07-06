@@ -15,6 +15,9 @@ const activeListName = document.querySelector('.active-list__label');
 const activeListEditInputName = document.querySelector('.active-list__name');
 const activeListEditInputColor = document.querySelector('.active-list__background-color');
 const activeListEditTodos = document.querySelector('.changed-list__todos');
+const listOfLists = document.querySelector('.list-of-lists');
+const optionsButtons = document.querySelector('.buttons__container');
+const editListManager = document.querySelector('.edit-list__container');
 
 
 
@@ -24,7 +27,7 @@ export function loadVideo(data) {
 }
 
 
-//Load lists' options
+//Load lists' options - to check list to load
 
 export function select(data) {
   selectList.innerHTML = "";
@@ -62,6 +65,27 @@ export function loadList(data, listIndex) {
 
       // console.log(array);
 
+    });
+  })
+
+  /*List of lists */
+
+  listOfLists.innerHtml = data.savedLists.map(element => {
+      const newElement = document.createElement("li");
+      listOfLists.appendChild(newElement);
+      newElement.innerHTML = `<li>${element.label}</li><button class="edit-list__button btn">Edit</button>`
+
+    }
+
+
+  );
+  const openEditListButton = document.querySelectorAll('.edit-list__button');
+  console.log(openEditListButton);
+
+  [...openEditListButton].map(element => {
+    element.addEventListener("click", () => {
+      changeVisibility(optionsButtons);
+      changeVisibility(editListManager);
     });
   })
 
