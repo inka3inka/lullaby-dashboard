@@ -68,7 +68,65 @@ export function loadList(data, listIndex) {
     });
   })
 
-  /*List of lists */
+//   /*List of lists */
+//   listOfLists.innerHtml = data.savedLists.map(element => {
+//       const newElement = document.createElement("li");
+//       listOfLists.appendChild(newElement);
+//       newElement.innerHTML = `<li>${element.label}</li><button class="edit-list__button btn">Edit</button>`
+//
+//     }
+//
+//
+//   );
+//   const openEditListButton = document.querySelectorAll('.edit-list__button');
+//   console.log(openEditListButton);
+//
+//   [...openEditListButton].map(element => {
+//     element.addEventListener("click", () => {
+//       changeVisibility(optionsButtons);
+//       changeVisibility(editListManager);
+//     });
+//   })
+//
+//   /*Edited list*/
+//   activeListEditTodos.innerText = "";
+//   activeListName.innerText = data.savedLists[listIndex].label;
+//   activeListEditInputName.value = data.savedLists[listIndex].label;
+//   activeListEditInputColor.value = data.savedLists[listIndex].backgroundListColor;
+//
+//   data.savedLists[listIndex].toDos.map(element => {
+//     const newElement = document.createElement("li");
+//     activeListEditTodos.appendChild(newElement);
+//     // newElement.style.color = element.color;
+//     // newElement.classList.add("list-element");
+//
+//     newElement.classList.add("list-element");
+//     newElement.innerHTML = `<div>
+//                             <input type="text" class="list-input list-input__name" value=${element.name}>
+//                             <input type="text" class="list-input list-input__color" value=${element.color}>
+//                           </div>
+//                           <div class="list-element__edit">
+//                             <i class="far fa-trash-alt"></i>
+//                           </div>
+// `;
+//
+//     // newElement.innerHTML = `<div>Name: <input type="text" value=${element.name}></div><div>Color: <input type="text" value=${element.color}></div><div class="list-element__edit">
+//     //                         <i class="far fa-trash-alt"></i>
+//     //                       </div>`;
+//   //Trash
+//       const remover = document.querySelectorAll('.changed-list__todos .fa-trash-alt');
+//       // console.log([...remover]);
+//       [...remover].map(element => element.addEventListener("click", function(event){activeListEditTodos.removeChild(this.parentElement.parentElement)}))
+//
+//   })
+
+
+
+}
+
+
+/*List of lists */
+export function editWindow(data) {
 
   listOfLists.innerHtml = data.savedLists.map(element => {
       const newElement = document.createElement("li");
@@ -79,51 +137,49 @@ export function loadList(data, listIndex) {
 
 
   );
-  const openEditListButton = document.querySelectorAll('.edit-list__button');
-  console.log(openEditListButton);
-
-  [...openEditListButton].map(element => {
-    element.addEventListener("click", () => {
-      changeVisibility(optionsButtons);
-      changeVisibility(editListManager);
-    });
-  })
-
-  /*Edited list*/
-  activeListEditTodos.innerText = "";
-  activeListName.innerText = data.savedLists[listIndex].label;
-  activeListEditInputName.value = data.savedLists[listIndex].label;
-  activeListEditInputColor.value = data.savedLists[listIndex].backgroundListColor;
-
-  data.savedLists[listIndex].toDos.map(element => {
-    const newElement = document.createElement("li");
-    activeListEditTodos.appendChild(newElement);
-    // newElement.style.color = element.color;
-    // newElement.classList.add("list-element");
-
-    newElement.classList.add("list-element");
-    newElement.innerHTML = `<div>
-                            <input type="text" class="list-input list-input__name" value=${element.name}>
-                            <input type="text" class="list-input list-input__color" value=${element.color}>
-                          </div>
-                          <div class="list-element__edit">
-                            <i class="far fa-trash-alt"></i>
-                          </div>
-`;
-
-    // newElement.innerHTML = `<div>Name: <input type="text" value=${element.name}></div><div>Color: <input type="text" value=${element.color}></div><div class="list-element__edit">
-    //                         <i class="far fa-trash-alt"></i>
-    //                       </div>`;
-  //Trash
-      const remover = document.querySelectorAll('.changed-list__todos .fa-trash-alt');
-      // console.log([...remover]);
-      [...remover].map(element => element.addEventListener("click", function(event){activeListEditTodos.removeChild(this.parentElement.parentElement)}))
-
-  })
-
-
-
 }
+
+// const openEditListButton = document.querySelectorAll('.edit-list__button');
+// console.log(openEditListButton);
+//
+// [...openEditListButton].map(element => {
+//   element.addEventListener("click", () => {
+//     changeVisibility(optionsButtons);
+//     changeVisibility(editListManager);
+//   });
+// })
+//
+// /*Edited list*/
+// activeListEditTodos.innerText = "";
+// activeListName.innerText = data.savedLists[listIndex].label;
+// activeListEditInputName.value = data.savedLists[listIndex].label;
+// activeListEditInputColor.value = data.savedLists[listIndex].backgroundListColor;
+//
+// data.savedLists[listIndex].toDos.map(element => {
+//   const newElement = document.createElement("li");
+//   activeListEditTodos.appendChild(newElement);
+//   // newElement.style.color = element.color;
+//   // newElement.classList.add("list-element");
+//
+//   newElement.classList.add("list-element");
+//   newElement.innerHTML = `<div>
+//                             <input type="text" class="list-input list-input__name" value=${element.name}>
+//                             <input type="text" class="list-input list-input__color" value=${element.color}>
+//                           </div>
+//                           <div class="list-element__edit">
+//                             <i class="far fa-trash-alt"></i>
+//                           </div>
+// `;
+//
+//   // newElement.innerHTML = `<div>Name: <input type="text" value=${element.name}></div><div>Color: <input type="text" value=${element.color}></div><div class="list-element__edit">
+//   //                         <i class="far fa-trash-alt"></i>
+//   //                       </div>`;
+//   //Trash
+//   const remover = document.querySelectorAll('.changed-list__todos .fa-trash-alt');
+//   // console.log([...remover]);
+//   [...remover].map(element => element.addEventListener("click", function(event){activeListEditTodos.removeChild(this.parentElement.parentElement)}))
+//
+// })
 
 //List handler
 

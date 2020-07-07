@@ -5,7 +5,7 @@ import {
   select,
   addListElement,
   changeVisibility,
-  saveList,
+  saveList, editWindow,
 } from "./utils";
 import {showTime} from "./clock";
 
@@ -47,26 +47,26 @@ window.addEventListener("DOMContentLoaded", () => {
     .then(resp => resp.json())
     .then((configuration) => {
 
-  //Load configuration
+      //Load configuration
 
-    //Load youtube video
-    loadVideo(configuration);
+      //Load youtube video
+      loadVideo(configuration);
 
-    //Load landing page list
-    loadList(configuration, 0);
+      //Load landing page list
+      loadList(configuration, 0);
 
-    //Load list options
-    select(configuration.savedLists);
+      //Load list options
+      select(configuration.savedLists);
 
-    //Load list
-    selectList.addEventListener(
-      'click',
-      () => loadList(configuration, selectList.options[selectList.selectedIndex].value));
+      //Load list
+      selectList.addEventListener(
+        'click',
+        () => loadList(configuration, selectList.options[selectList.selectedIndex].value));
 
       //Show lists' options
       optionsButton.addEventListener("click", () => {
         changeVisibility(optionsContainer);
-
+        editWindow(configuration);
       });
 
       //Close list's options
@@ -92,11 +92,11 @@ window.addEventListener("DOMContentLoaded", () => {
       addTaskButtonEditedList.addEventListener('click', () => addListElement(activeListEditTodos))
 
       //Open add new list container
-      openEditListButton.addEventListener("click", () => {
-        changeVisibility(optionsButtons);
-        changeVisibility(editListManager);
-
-      });
+      // openEditListButton.addEventListener("click", () => {
+      //   changeVisibility(optionsButtons);
+      //   changeVisibility(editListManager);
+      //
+      // });
 
       //Save edited current list's elements
 
@@ -136,24 +136,24 @@ window.addEventListener("DOMContentLoaded", () => {
       })
 
       saveListButton.addEventListener("click", () => {
-        console.log("click")
+          console.log("click")
 
-        function ToDos(name, color) {
-          this.name = name;
-          this.color = color
+          function ToDos(name, color) {
+            this.name = name;
+            this.color = color
+          }
+
+          const listId = configuration.savedLists.length + 1;
+          const array = Array.from(newListElements.children);
+          console.log(array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value)));
+          const newList = saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value))
+
+          )
+          configuration.savedLists.push(newList);
+
+          select(configuration.savedLists)
+
         }
-
-        const listId = configuration.savedLists.length + 1;
-        const array = Array.from(newListElements.children);
-        console.log(array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value)));
-        const newList = saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value))
-
-        )
-        configuration.savedLists.push(newList);
-
-        select(configuration.savedLists)
-
-      }
 
       )
 
@@ -168,5 +168,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 })
+
 
 
