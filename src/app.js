@@ -30,6 +30,7 @@ const activeListEditInputName = document.querySelector('.active-list__name');
 const activeListEditInputColor = document.querySelector('.active-list__background-color');
 const activeListEditTodos = document.querySelector('.changed-list__todos');
 const newTodos = document.querySelector('.new-list__todos');
+const listOfLists = document.querySelector('.list-of-lists');
 
 
 
@@ -78,6 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
         listName.value = "";
         backgroundListColor.value = "";
         newListElements.innerHTML = "";
+        listOfLists.innerHTML = "";
       });
 
       //Open add new list container
