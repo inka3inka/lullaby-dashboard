@@ -235,6 +235,11 @@ li {
     display: none
   }
 
+  .list-of-lists {
+    overflow: auto;
+    height: 70vh;
+  }
+
   .new-list__container {
 
     @include media-horizontal {

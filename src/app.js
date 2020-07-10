@@ -72,6 +72,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
       //Close list's options
       close.addEventListener("click", () => {
+
+        /*Repeated*/
         changeVisibility(optionsContainer);
         if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
         if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
@@ -117,6 +119,7 @@ window.addEventListener("DOMContentLoaded", () => {
         configuration.savedLists[listId] = changedList;
         select(configuration.savedLists);
 
+        /*Repeated*/
         changeVisibility(optionsContainer);
         if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
         if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
@@ -162,6 +165,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
           select(configuration.savedLists)
 
+        /*Repeated*/
         changeVisibility(optionsContainer);
         if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
         if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
