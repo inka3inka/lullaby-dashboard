@@ -115,9 +115,16 @@ window.addEventListener("DOMContentLoaded", () => {
         const changedList = saveList(activeListEditInputName.value, listId, activeListEditInputColor.value, toDos);
         delete configuration.savedLists[listId];
         configuration.savedLists[listId] = changedList;
-        select(configuration.savedLists)
+        select(configuration.savedLists);
 
-
+        changeVisibility(optionsContainer);
+        if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
+        if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
+        if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
+        listName.value = "";
+        backgroundListColor.value = "";
+        newListElements.innerHTML = "";
+        listOfLists.innerHTML = "";
       })
 
 
@@ -155,6 +162,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
           select(configuration.savedLists)
 
+        changeVisibility(optionsContainer);
+        if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
+        if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
+        if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
+        listName.value = "";
+        backgroundListColor.value = "";
+        newListElements.innerHTML = "";
+        listOfLists.innerHTML = "";
         }
 
       )

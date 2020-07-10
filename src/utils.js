@@ -99,7 +99,7 @@ export function editWindow(data) {
 
         newElement.classList.add("list-element");
         newElement.innerHTML = `<div>
-                                  <input type="text" class="list-input list-input__name" value=${element.name}>
+                                  <input type="text" class="list-input list-input__name" value="${element.name}">
                                   <input type="text" class="list-input list-input__color" value=${element.color}>
                                 </div>
                                 <div class="list-element__edit">
