@@ -1,4 +1,4 @@
-import {getContrastYIQ} from "./clock";
+import {getContrastYIQ, showTime} from "./clock";
 
 const clock = document.querySelector('.clock');
 const container = document.querySelector('.container');

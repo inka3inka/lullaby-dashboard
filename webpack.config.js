@@ -1,8 +1,7 @@
 var path = require("path");
 
-
 module.exports={
-  entry:"./src/app.js",
+  entry:['whatwg-fetch', "./src/app.js"],
   output: { filename: "out.js", path: path.resolve(__dirname, "build") },
   watch: true,
   devServer: {

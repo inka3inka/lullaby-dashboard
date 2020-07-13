@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 import '../styles/main.scss';
 import {
   loadList,
