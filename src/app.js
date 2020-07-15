@@ -6,7 +6,7 @@ import {
   select,
   addListElement,
   changeVisibility,
-  saveList, editWindow,
+  saveList, editWindow, download,
 } from "./utils";
 import {showTime} from "./clock";
 
@@ -32,6 +32,7 @@ const activeListEditInputColor = document.querySelector('.active-list__backgroun
 const activeListEditTodos = document.querySelector('.changed-list__todos');
 const newTodos = document.querySelector('.new-list__todos');
 const listOfLists = document.querySelector('.list-of-lists');
+const exportFile = document.querySelector('.export__button');
 
 
 
@@ -178,6 +179,13 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
       )
+
+      exportFile.addEventListener('click', () => {
+        const exported = JSON.stringify(configuration);
+        // console.log(JSON.stringify(configuration));
+        download(exported, 'json.txt', 'text/plain');
+
+      })
 
 
 
