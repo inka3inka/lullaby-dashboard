@@ -3,7 +3,8 @@ import {getContrastYIQ, showTime} from "./clock";
 const clock = document.querySelector('.clock');
 const container = document.querySelector('.container');
 const list = document.querySelector('.list');
-const listElements = document.querySelector('.list-elements');
+const listElementsDone = document.querySelector('.list-elements-done');
+const listElementsUndone = document.querySelector('.list-elements-undone');
 const video = document.querySelector('.video');
 const listName = document.querySelector('.list-name');
 const selectList = document.querySelector('.select-list');
@@ -42,7 +43,7 @@ export function select(data) {
 
 // Load to do list
 export function loadList(data, listIndex) {
-  listElements.innerText = "";
+  listElementsDone.innerText = "";
 
   //List background
   container.style.backgroundColor = data.savedLists[listIndex].backgroundListColor;
@@ -53,20 +54,31 @@ export function loadList(data, listIndex) {
   //List elements
   // const array = [];
   // const addOrRemove = (arr, item) => arr.includes(item) ? arr.filter(i => i !== item) : [ ...arr, item ];
-  data.savedLists[listIndex].toDos.map(element => {
+
+    data.savedLists[listIndex].toDos.map(element => {
     const newElement = document.createElement("li");
-    listElements.appendChild(newElement);
+    listElementsDone.appendChild(newElement);
     newElement.style.color = element.color;
     newElement.classList.add("list-element");
     newElement.innerHTML = element.name;
     newElement.addEventListener("click", (event) => {
       event.target.classList.toggle("checked");
-      // array.push(event.target);
-
-      // console.log(array);
-
+      selection();
     });
+    return newElement
   })
+
+}
+
+function selection() {
+  const tasks = [...listElementsDone.children, ...listElementsUndone.children];
+  const undone = tasks.filter(element => !element.classList.contains("checked"));
+  const done = tasks.filter(element => element.classList.contains("checked"));
+
+  done.forEach(element => listElementsDone.appendChild(element));
+  undone.forEach(element => listElementsUndone.appendChild(element));
+
+  // console.log([...listElementsDone.children].filter(element => !element.classList.contains("checked")));
 }
 
 

@@ -33,7 +33,7 @@ const activeListEditTodos = document.querySelector('.changed-list__todos');
 const newTodos = document.querySelector('.new-list__todos');
 const listOfLists = document.querySelector('.list-of-lists');
 const exportFile = document.querySelector('.export__button');
-
+const colorpicker = document.querySelector('.colorpicker');
 
 
 
@@ -97,12 +97,6 @@ window.addEventListener("DOMContentLoaded", () => {
       addTaskButtonNewList.addEventListener('click', () => addListElement(newTodos));
       addTaskButtonEditedList.addEventListener('click', () => addListElement(activeListEditTodos))
 
-      //Open add new list container
-      // openEditListButton.addEventListener("click", () => {
-      //   changeVisibility(optionsButtons);
-      //   changeVisibility(editListManager);
-      //
-      // });
 
       //Save edited current list's elements
 
