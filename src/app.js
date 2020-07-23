@@ -33,7 +33,6 @@ const listOfLists = document.querySelector('.list-of-lists');
 const exportFile = document.querySelector('.export__button');
 
 
-
 window.addEventListener("DOMContentLoaded", () => {
 
 //Fetch json
@@ -168,6 +167,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const exported = JSON.stringify(configuration);
         download(exported, 'json.txt', 'text/plain');
       })
+
     });
 
 

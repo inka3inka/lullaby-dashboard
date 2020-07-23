@@ -1,4 +1,4 @@
-import {getContrastYIQ, showTime} from "./clock";
+import {getContrastYIQ} from "./clock";
 
 const container = document.querySelector('.container');
 const listElementsDone = document.querySelector('.list-elements-done');
@@ -68,6 +68,11 @@ function selection() {
 
   done.forEach(element => listElementsDone.appendChild(element));
   undone.forEach(element => listElementsUndone.appendChild(element));
+
+  localStorage.setItem("done", done);
+  localStorage.setItem("undone", undone);
+
+  console.log(localStorage);
 }
 
 
