@@ -13,7 +13,6 @@ import {showTime} from "./clock";
 const selectList = document.querySelector('.select-list');
 const addTaskButtonNewList = document.querySelector('.new-list__container .button__add-task');
 const addTaskButtonEditedList = document.querySelector('.edit-list__container .button__add-task');
-const listInput = document.querySelector('.list-input');
 const optionsButton = document.querySelector('.options__button');
 const optionsContainer = document.querySelector('.options__container');
 const optionsButtons = document.querySelector('.buttons__container');
@@ -24,7 +23,6 @@ const saveListButton = document.querySelector('.button__save-list');
 const listName = document.querySelector('.list-label');
 const backgroundListColor = document.querySelector('.background-color');
 const newListElements = document.querySelector('.new-list__todos');
-const openEditListButton = document.querySelector('.edit-list__button');
 const editListManager = document.querySelector('.edit-list__container');
 const saveChangesButton = document.querySelector('.button__save-changes');
 const activeListEditInputName = document.querySelector('.active-list__name');
@@ -33,9 +31,6 @@ const activeListEditTodos = document.querySelector('.changed-list__todos');
 const newTodos = document.querySelector('.new-list__todos');
 const listOfLists = document.querySelector('.list-of-lists');
 const exportFile = document.querySelector('.export__button');
-const colorpicker = document.querySelector('.colorpicker');
-
-
 
 
 
@@ -144,8 +139,6 @@ window.addEventListener("DOMContentLoaded", () => {
       })
 
       saveListButton.addEventListener("click", () => {
-          console.log("click")
-
           function ToDos(name, color) {
             this.name = name;
             this.color = color
@@ -153,9 +146,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
           const listId = configuration.savedLists.length + 1;
           const array = Array.from(newListElements.children);
-          console.log(array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value)));
           const newList = saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value))
-
           )
           configuration.savedLists.push(newList);
 
@@ -171,25 +162,17 @@ window.addEventListener("DOMContentLoaded", () => {
         newListElements.innerHTML = "";
         listOfLists.innerHTML = "";
         }
-
       )
 
       exportFile.addEventListener('click', () => {
         const exported = JSON.stringify(configuration);
-        // console.log(JSON.stringify(configuration));
         download(exported, 'json.txt', 'text/plain');
-
       })
-
-
-
     });
 
 
   //Show clock time
   showTime();
-
-
 
 })
 
