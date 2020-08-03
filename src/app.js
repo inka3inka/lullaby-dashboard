@@ -28,6 +28,7 @@ const saveChangesButton = document.querySelector('.button__save-changes');
 const activeListEditInputName = document.querySelector('.active-list__name');
 const activeListEditInputColor = document.querySelector('.active-list__background-color');
 const activeListEditTodos = document.querySelector('.changed-list__todos');
+const activeListId = document.querySelector('.active-list__id');
 const newTodos = document.querySelector('.new-list__todos');
 const listOfLists = document.querySelector('.list-of-lists');
 const exportFile = document.querySelector('.export__button');
@@ -101,12 +102,12 @@ window.addEventListener("DOMContentLoaded", () => {
           this.color = color
         }
 
-        const listId = selectList.options[selectList.selectedIndex].value;
+        const listId = activeListId.value;
         const array = Array.from(activeListEditTodos.children);
         const toDos = array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value));
         const changedList = saveList(activeListEditInputName.value, listId, activeListEditInputColor.value, toDos);
-        delete configuration.savedLists[listId];
-        configuration.savedLists[listId] = changedList;
+        delete configuration.savedLists[listId-1];
+        configuration.savedLists[listId-1] = changedList;
         select(configuration.savedLists);
 
         /*Repeated*/

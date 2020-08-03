@@ -6,6 +6,7 @@ const listElementsUndone = document.querySelector('.list-elements-undone');
 const video = document.querySelector('.video');
 const selectList = document.querySelector('.select-list');
 const activeListName = document.querySelector('.active-list__label');
+const activeListId = document.querySelector('.active-list__id');
 const activeListEditInputName = document.querySelector('.active-list__name');
 const activeListEditInputColor = document.querySelector('.active-list__background-color');
 const activeListEditTodos = document.querySelector('.changed-list__todos');
@@ -94,6 +95,8 @@ export function editWindow(data) {
       /*Edited list*/
       activeListEditTodos.innerText = "";
       activeListName.innerText = data.savedLists[index].label;
+      activeListId.value = data.savedLists[index].listId;
+      activeListId.innerText = data.savedLists[index].listId;
       activeListEditInputName.value = data.savedLists[index].label;
       activeListEditInputColor.value = data.savedLists[index].backgroundListColor;
 
