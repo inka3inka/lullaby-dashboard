@@ -142,13 +142,17 @@ li {
   justify-content: center;
   align-items: center;
   margin-bottom: 3vh;
+  width: 50vw;
+  text-align: center;
+  text-align-last: center;
+  -moz-text-align-last: center;
 
   @include media-horizontal {
     margin-bottom: 0;
+    width: 15vw;
   }
 
   .select-list {
-    width: 100%;
     cursor: pointer;
     padding: 0 5px;
 
@@ -315,8 +319,8 @@ li {
   }
 }
 
-.btn--open-manager, .export__button {
-  width: 50%;
+.btn--open-manager, .export__button, select.btn {
+  width: 80%;
 }
 
 .hidden {
