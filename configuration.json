@@ -3,66 +3,66 @@
   "savedLists":
     [
       {
-        "label": "Aenean rhoncus",
+        "label": "List 1",
         "listId": "1",
         "backgroundListColor": "#000000",
         "toDos": [
           {
-            "name": "Sed felis nulla",
+            "name": "To do 1",
             "color": "red"
           },
           {
-            "name": "Morbi vel quam",
+            "name": "To do 2",
             "color": "blue"
           },
           {
-            "name": "Sed vitae efficitur odio",
+            "name": "To do 3",
             "color": "purple"
           },
           {
-            "name": "Ed sit amet pulvinar ex, et varius est",
+            "name": "To do 4",
             "color": "white"
           },
           {
-            "name": "Nunc a libero eget justo auctor lobortis eu nec nisl",
+            "name": "To do 5",
             "color": "black"
           }
         ]
       },
       {
-        "label": "Morbi luctus velit sapien",
+        "label": "List 2",
         "listId": "2",
         "backgroundListColor": "#b4eeb4",
         "toDos": [
           {
-            "name": "Nulla non tincidunt augue",
+            "name": "To do - Nulla non tincidunt augue",
             "color": "red"
           },
           {
-            "name": "Vel quam",
+            "name": "To do - Vel quam",
             "color": "red"
           },
           {
-            "name": "Efficitur odio",
+            "name": "To do - Efficitur odio",
             "color": "red"
           },
           {
-            "name": "Libero eget justo auctor lobortis eu nec",
+            "name": "To do - Libero eget justo auctor lobortis eu nec",
             "color": "red"
           }
         ]
       },
       {
-        "label": "Nam sit amet fringilla diam",
+        "label": "List 3",
         "listId": "3",
         "backgroundListColor": "#a2b2b6",
         "toDos": [
           {
-            "name": "Aenean porta fringilla sapien at eleifend",
+            "name": "To do - Aenean porta fringilla sapien at eleifend",
             "color": "red"
           },
           {
-            "name": "Nunc efficitur elit luctus",
+            "name": "To do - Nunc efficitur elit luctus",
             "color": "red"
           },
           {
