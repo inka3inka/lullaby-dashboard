@@ -32,6 +32,7 @@ const activeListId = document.querySelector('.active-list__id');
 const newTodos = document.querySelector('.new-list__todos');
 const listOfLists = document.querySelector('.list-of-lists');
 const exportFile = document.querySelector('.export__button');
+const list = document.querySelector('.list');
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -64,6 +65,7 @@ window.addEventListener("DOMContentLoaded", () => {
       //Show lists' options
       optionsButton.addEventListener("click", () => {
         changeVisibility(optionsContainer);
+        changeVisibility(list);
         editWindow(configuration);
       });
 
@@ -72,6 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         /*Repeated*/
         changeVisibility(optionsContainer);
+        if (list.classList.contains("hidden")) {changeVisibility(list)};
         if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
         if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
         if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
@@ -112,6 +115,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         /*Repeated*/
         changeVisibility(optionsContainer);
+        if (list.classList.contains("hidden")) {changeVisibility(list)};
         if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
         if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
         if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
@@ -154,6 +158,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         /*Repeated*/
         changeVisibility(optionsContainer);
+        if (list.classList.contains("hidden")) {changeVisibility(list)};
         if (!newListManager.classList.contains("hidden")) {changeVisibility(newListManager)};
         if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
         if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
