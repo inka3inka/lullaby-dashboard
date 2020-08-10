@@ -213,7 +213,7 @@ li {
   position: absolute;
   z-index: 100;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #f5f5f0;
   color: #000000;
   display: flex;
@@ -251,11 +251,17 @@ li {
     @include media-horizontal {
       justify-content: space-between;
     }
+
+    div:last-child {
+      padding-top: 4vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .new-list__data {
     width: 90%;
-    height: 90%;
     margin: 0 auto 1vw;
 
     @include media-horizontal {
@@ -282,7 +288,7 @@ li {
 
     .new-list__todos {
       overflow: auto;
-      height: 70vh;
+      height: 50vh;
 
       @include media-horizontal {
         height: 38vh;
