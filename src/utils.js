@@ -38,6 +38,7 @@ export function select(data) {
 // Load to do list
 export function loadList(data, listIndex) {
   listElementsDone.innerText = "";
+  listElementsUndone.innerText = "";
 
   //List background
   container.style.backgroundColor = data.savedLists[listIndex].backgroundListColor;
@@ -49,7 +50,7 @@ export function loadList(data, listIndex) {
 
     data.savedLists[listIndex].toDos.map(element => {
     const newElement = document.createElement("li");
-    listElementsDone.appendChild(newElement);
+    listElementsUndone.appendChild(newElement);
     newElement.style.color = element.color;
     newElement.classList.add("list-element");
     newElement.innerHTML = element.name;
