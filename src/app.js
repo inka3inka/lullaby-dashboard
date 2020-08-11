@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       //Load list
       selectList.addEventListener(
-        'click',
+        'change',
         () => loadList(configuration, selectList.options[selectList.selectedIndex].value));
 
       //Show lists' options
