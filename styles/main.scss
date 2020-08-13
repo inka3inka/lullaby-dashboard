@@ -1,5 +1,6 @@
 @import 'mixins';
 @import 'reset';
+@import '~@simonwep/pickr/dist/themes/classic.min.css';
 
 body {
   background-color: #000000;
@@ -359,4 +360,10 @@ li {
 .button__container--save-changes {
   display: flex;
   justify-content: center;
+}
+
+.pickr {
+  width: 15px;
+  height: 15px;
+  border: 1px solid red;
 }
