@@ -362,8 +362,24 @@ li {
   justify-content: center;
 }
 
-.pickr {
-  width: 15px;
-  height: 15px;
-  border: 1px solid red;
+.picker__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5em;
+}
+
+.color-pickers > div {
+  margin-bottom: 0.5em;
+}
+
+.picker__container > button {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+  border-radius: 0.1em;
 }
