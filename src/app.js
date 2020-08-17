@@ -9,8 +9,7 @@ import {
   saveList, editWindow, download,
 } from "./utils";
 import {showTime} from "./clock";
-import Pickr from '@simonwep/pickr';
-import '@simonwep/pickr/dist/themes/classic.min.css';
+import picker from "./color_picker"
 
 const selectList = document.querySelector('.select-list');
 const addTaskButtonNewList = document.querySelector('.new-list__container .button__add-task');
@@ -35,7 +34,7 @@ const newTodos = document.querySelector('.new-list__todos');
 const listOfLists = document.querySelector('.list-of-lists');
 const exportFile = document.querySelector('.export__button');
 const list = document.querySelector('.list');
-// const pickr = document.querySelector('.pickr');
+const btn = document.querySelector('.picker__button');
 
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -183,57 +182,9 @@ window.addEventListener("DOMContentLoaded", () => {
   //Show clock time
   showTime();
 
-
-
-  const pickers = document.querySelector('.color-pickers');
-  const btn = document.querySelector('.picker__button');
-
-
   btn.addEventListener('click', () => {
-    const newElement = document.createElement('div');
-    pickers.appendChild(newElement);
-
-    const pickr = new Pickr({
-      el: newElement,
-      default: '#42445A',
-      theme: 'monolith',
-      lockOpacity: true,
-
-      swatches: [
-        'rgba(244, 67, 54, 1)',
-        'rgba(233, 30, 99, 0.95)',
-        'rgba(156, 39, 176, 0.9)',
-        'rgba(103, 58, 183, 0.85)',
-        'rgba(63, 81, 181, 0.8)',
-        'rgba(33, 150, 243, 0.75)',
-        'rgba(3, 169, 244, 0.7)',
-        'rgba(0, 188, 212, 0.7)',
-        'rgba(0, 150, 136, 0.75)',
-        'rgba(76, 175, 80, 0.8)',
-        'rgba(139, 195, 74, 0.85)',
-        'rgba(205, 220, 57, 0.9)',
-        'rgba(255, 235, 59, 0.95)',
-        'rgba(255, 193, 7, 1)'
-      ],
-
-      components: {
-        preview: true,
-        opacity: true,
-        hue: true,
-
-        interaction: {
-          hex: true,
-          rgba: true,
-          hsva: true,
-          input: true,
-          clear: true,
-          save: true
-        }
-      }
-    });
+    picker()
   });
-
-
 
 })
 
