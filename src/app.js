@@ -196,7 +196,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const pickr = new Pickr({
       el: newElement,
       default: '#42445A',
-      theme: 'classic',
+      theme: 'monolith',
       lockOpacity: true,
 
       swatches: [
