@@ -45,4 +45,7 @@ export default function picker () {
       }
     }
   });
+  pickr.on('save', (color, instance) => {
+    console.log('save', color, instance);
+  })
 }
