@@ -182,7 +182,7 @@ window.addEventListener("DOMContentLoaded", () => {
   //Show clock time
   showTime();
 
-  picker();
+  // picker();
 
   // btn.addEventListener('click', () => {
   //   picker();

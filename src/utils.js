@@ -1,4 +1,5 @@
 import {getContrastYIQ} from "./clock";
+import picker from "./color_picker";
 
 const container = document.querySelector('.container');
 const listElementsDone = document.querySelector('.list-elements-done');
@@ -94,12 +95,12 @@ export function editWindow(data) {
       changeVisibility(editListManager);
 
       /*Edited list*/
+      picker(data.savedLists[index].backgroundListColor);
       activeListEditTodos.innerText = "";
       activeListName.innerText = data.savedLists[index].label;
       activeListId.value = data.savedLists[index].listId;
       activeListId.innerText = data.savedLists[index].listId;
       activeListEditInputName.value = data.savedLists[index].label;
-      activeListEditInputColor.value = data.savedLists[index].backgroundListColor;
 
       data.savedLists[index].toDos.map(element => {
         const newElement = document.createElement("li");

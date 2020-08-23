@@ -3,13 +3,13 @@ import '@simonwep/pickr/dist/themes/classic.min.css';
 
 const pickers = document.querySelector('.color-pickers');
 
-export default function picker () {
+export default function picker (savedColor) {
   const newElement = document.createElement('div');
   pickers.appendChild(newElement);
 
   const pickr = new Pickr({
     el: newElement,
-    default: '#42445A',
+    default: savedColor,
     theme: 'monolith',
     lockOpacity: true,
 
