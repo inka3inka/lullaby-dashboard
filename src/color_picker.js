@@ -4,6 +4,10 @@ import '@simonwep/pickr/dist/themes/classic.min.css';
 const pickers = document.querySelector('.color-pickers');
 
 export default function picker (savedColor) {
+  if (document.querySelector('.pickr')){
+    const prevPickr = document.querySelector('.pickr');
+    prevPickr.parentElement.removeChild(prevPickr);
+  }
   const newElement = document.createElement('div');
   pickers.appendChild(newElement);
 
