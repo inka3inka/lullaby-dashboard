@@ -362,6 +362,11 @@ li {
   justify-content: center;
 }
 
+.list__todos {
+  display: flex;
+  flex-direction: row;
+}
+
 .picker__container {
   display: flex;
   flex-direction: column;

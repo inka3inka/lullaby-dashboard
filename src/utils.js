@@ -107,9 +107,11 @@ export function editWindow(data) {
         activeListEditTodos.appendChild(newElement);
 
         newElement.classList.add("list-element");
-        newElement.innerHTML = `<div>
+        newElement.innerHTML = `<div class="list__todos">
                                   <input type="text" class="list-input list-input__name" value="${element.name}">
-                                  <input type="text" class="list-input list-input__color" value=${element.color}>
+                                  <div class="picker__container">
+                                    <div class="color-pickers">${picker("#000000")}</div>
+                                  </div>
                                 </div>
                                 <div class="list-element__edit">
                                   <i class="far fa-trash-alt"></i>
