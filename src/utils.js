@@ -1,5 +1,6 @@
 import {getContrastYIQ} from "./clock";
 import picker from "./color_picker";
+import pickerToDo from "./color_picker_todo";
 
 const container = document.querySelector('.container');
 const listElementsDone = document.querySelector('.list-elements-done');
@@ -14,7 +15,6 @@ const activeListEditTodos = document.querySelector('.changed-list__todos');
 const listOfLists = document.querySelector('.list-of-lists');
 const optionsButtons = document.querySelector('.buttons__container');
 const editListManager = document.querySelector('.edit-list__container');
-
 
 
 //Load youtube video
@@ -110,7 +110,7 @@ export function editWindow(data) {
         newElement.innerHTML = `<div class="list__todos">
                                   <input type="text" class="list-input list-input__name" value="${element.name}">
                                   <div class="picker__container">
-                                    <div class="color-pickers">${picker("#000000")}</div>
+                                    <div class="color-pickers color-pickers-todo"></div>
                                   </div>
                                 </div>
                                 <div class="list-element__edit">
@@ -125,7 +125,10 @@ export function editWindow(data) {
             activeListEditTodos.removeChild(this.parentElement.parentElement)
           })
         })
+
       });
+      const pickersToDo = document.querySelectorAll('.color-pickers-todo');
+      [...pickersToDo].forEach(() => pickerToDo("#000000"))
     })
   })
 }
