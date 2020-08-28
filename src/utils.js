@@ -125,7 +125,7 @@ export function editWindow(data) {
             activeListEditTodos.removeChild(this.parentElement.parentElement)
           })
         })
-        pickerToDo("#000000")
+        pickerToDo(element.color)
 
       });
 
