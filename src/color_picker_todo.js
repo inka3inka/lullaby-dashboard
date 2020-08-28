@@ -4,10 +4,10 @@ import '@simonwep/pickr/dist/themes/classic.min.css';
 
 
 export default function pickerToDo (savedColor) {
-  const pickersToDo = document.querySelector('.color-pickers-todo');
+  const pickersToDo = document.querySelectorAll('.color-pickers-todo');
 
   const newElement = document.createElement('div');
-  pickersToDo.appendChild(newElement);
+  [...pickersToDo].forEach(element => element.appendChild(newElement));
 
   const pickr = new Pickr({
     el: newElement,

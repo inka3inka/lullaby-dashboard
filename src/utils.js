@@ -125,10 +125,14 @@ export function editWindow(data) {
             activeListEditTodos.removeChild(this.parentElement.parentElement)
           })
         })
+        pickerToDo("#000000")
 
       });
-      const pickersToDo = document.querySelectorAll('.color-pickers-todo');
-      [...pickersToDo].forEach(() => pickerToDo("#000000"))
+
+
+
+
+
     })
   })
 }
