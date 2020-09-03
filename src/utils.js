@@ -158,7 +158,8 @@ export function addListElement(todosList) {
 
   //Trash
   const remover = document.querySelectorAll('.fa-trash-alt');
-  [...remover].map(element => element.addEventListener("click", function(event){todosList.removeChild(this.parentElement.parentElement)}))
+  [...remover].map(element => element.addEventListener("click", function(event){todosList.removeChild(this.parentElement.parentElement)}));
+  pickerToDo('#000000')
 }
 
 
@@ -191,4 +192,3 @@ export function download(content, fileName, contentType) {
   a.download = fileName;
   a.click();
 }
-
