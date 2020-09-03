@@ -146,7 +146,9 @@ export function addListElement(todosList) {
   newElement.classList.add("list-element");
   newElement.innerHTML = `<div>
                             <input type="text" class="list-input list-input__name" placeholder="Add new task">
-                            <input type="text" class="list-input list-input__color" placeholder="Add task's color">
+                            <div class="picker__container">
+                              <div class="color-pickers color-pickers-todo"></div>
+                            </div>
                           </div>
                           <div class="list-element__edit">
                             <i class="far fa-trash-alt"></i>
