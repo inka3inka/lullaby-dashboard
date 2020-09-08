@@ -153,7 +153,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
           const listId = configuration.savedLists.length + 1;
           const array = Array.from(newListElements.children);
-          const newList = saveList(listName.value, listId, backgroundListColor.value, array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value))
+          //Change backgroundListColor
+          const newList = saveList(listName.value, listId, backgroundListColor, array.map(element => new ToDos(element.firstChild.children[0].value, element.firstChild.children[1].value))
           )
           configuration.savedLists.push(newList);
 
@@ -166,7 +167,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!editListManager.classList.contains("hidden")) {changeVisibility(editListManager)};
         if (optionsButtons.classList.contains("hidden")) {changeVisibility(optionsButtons)};
         listName.value = "";
-        backgroundListColor.value = "";
+        // backgroundListColor.value = ""; Out because of color picker
         newListElements.innerHTML = "";
         listOfLists.innerHTML = "";
         }
