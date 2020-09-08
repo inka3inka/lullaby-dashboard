@@ -9,6 +9,7 @@ import {
   saveList, editWindow, download,
 } from "./utils";
 import {showTime} from "./clock";
+import picker from './color_picker';
 
 const selectList = document.querySelector('.select-list');
 const addTaskButtonNewList = document.querySelector('.new-list__container .button__add-task');
@@ -89,6 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
       openNewListManagerButton.addEventListener("click", () => {
         changeVisibility(optionsButtons);
         changeVisibility(newListManager);
+        picker("#000000")
 
       });
 
